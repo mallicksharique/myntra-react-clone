@@ -11,13 +11,15 @@ import {Provider} from  "react-redux"
 import itemStore from './store/index.js'
 
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
   {
     path: "/",
     element: <App />,
     children: [
       {
-        path: "/",
+       
+        index:true,
         element: <Home />,
       },
       {
@@ -27,7 +29,12 @@ const router = createBrowserRouter([
   
     ],
   },
-])
+],
+{
+   basename: "/myntra-react-clone",
+
+}
+);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
